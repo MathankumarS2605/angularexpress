@@ -1,0 +1,23 @@
+<br><br>
+<b>Enter USER'S Data</b><BR>
+
+    <form  #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+     UserName: <input type="text" name="username" ngModel><br><br>
+     Password: <input type="text" name="password" ngModel><br><br>
+      EmailId:<input type="text" name="email" ngModel><br><br>
+      <button type="submit">Add User</button><br><br>
+      <input type="button" value="GetUser" (click)="getUsers()"/><br><br>
+       <button type="button" (click)="updateUser(userForm)">Update</button><br><br>
+       <button type="button" (click)="deleteUser(userForm)">Delete</button> <br><br>    
+      <input type="button" value="GetUserById" (click)="getUser(userForm)"/> 
+      </form>
+      <b id="b"></b>
+  
+      <table >
+        <tr><td>UserName</td><td>Password</td><td>EmailId</td></tr>
+        <tr *ngFor="let user of userList"><td>{{user.UserName}} </td><td>{{user.Password}}</td> <td>{{user.emailId}}</td></tr>
+      </table>
+      <ul>
+        <li>{{this.username}}  {{this.password}}   {{this.email}}</li>
+      </ul>
+     

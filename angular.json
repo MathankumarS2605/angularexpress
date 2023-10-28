@@ -5,13 +5,68 @@
   "projects": {
     "angularexpress": {
       "projectType": "application",
-      "schematics": {},
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ml": {
+            "translation": "src/locale/messages.ml.xlf",
+            "baseHref": ""
+          },
+          "ka": {
+            "translation": "src/locale/messages.ka.xlf",
+            "baseHref": ""
+          },
+          "tl": {
+            "translation": "src/locale/messages.tl.xlf",
+            "baseHref": ""
+          },
+          "tm": {
+            "translation": "src/locale/messages.tm.xlf",
+            "baseHref": ""
+          },
+          "hi": {
+            "translation": "src/locale/messages.hi.xlf",
+            "baseHref": ""
+          },
+          "as": {
+            "translation": "src/locale/messages.as.xlf",
+            "baseHref": ""
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+         
           "options": {
             "outputPath": "dist/angularexpress",
             "index": "src/index.html",
@@ -45,6 +100,36 @@
               ],
               "outputHashing": "all"
             },
+            "fr": {
+              "localize": ["fr"],
+              "outputPath": "dist/under-construction-fr/",
+              "i18nMissingTranslation": "error"
+            },
+            "ka": {
+              "localize": ["ka"],
+              "outputPath": "dist/under-construction-ka/",
+              "i18nMissingTranslation": "error"
+            },
+            "te": {
+              "localize": ["te"],
+              "outputPath": "dist/under-construction-te/",
+              "i18nMissingTranslation": "error"
+            },
+            "tm": {
+              "localize": ["tm"],
+              "outputPath": "dist/under-construction-tm/",
+              "i18nMissingTranslation": "error"
+            },
+            "hi": {
+              "localize": ["hi"],
+              "outputPath": "dist/under-construction-hi/",
+              "i18nMissingTranslation": "error"
+            },
+            "as": {
+              "localize": ["as"],
+              "outputPath": "dist/under-construction-as/",
+              "i18nMissingTranslation": "error"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -62,6 +147,25 @@
             "production": {
               "browserTarget": "angularexpress:build:production"
             },
+            "fr": {
+              "browserTarget": "angularexpress:build:fr"
+            },
+            "te": {
+              "browserTarget": "angularexpress:build:te"
+            },
+            "ka": {
+              "browserTarget": "angularexpress:build:ka"
+            },
+            "tm": {
+              "browserTarget": "angularexpress:build:tm"
+            },
+            "hi": {
+              "browserTarget": "angularexpress:build:hi"
+            },
+            "as": {
+              "browserTarget": "angularexpress:build:as"
+            }
+            ,
             "development": {
               "browserTarget": "angularexpress:build:development"
             }
@@ -94,5 +198,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
